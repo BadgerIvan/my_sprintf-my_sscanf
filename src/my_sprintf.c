@@ -178,8 +178,7 @@ static void process_char(char *buffer, va_list args, fmt_t *fmt,
 static char *get_processed_string(char *str, fmt_t *fmt) {
   if (str != my_NULL) return str;
   str = "(null)";
-  if (fmt->precision_set && fmt->precision <= my_strlen("(null)") - 1)
-    str = "";
+  if (fmt->precision_set && fmt->precision <= my_strlen("(null)") - 1) str = "";
   return str;
 }
 
@@ -197,9 +196,9 @@ static my_size_t calculate_padding(fmt_t *fmt, my_size_t string_len) {
 }
 
 static my_size_t format_string_with_left_alignment(char *buffer,
-                                                    const char *string,
-                                                    my_size_t string_len,
-                                                    my_size_t padding) {
+                                                   const char *string,
+                                                   my_size_t string_len,
+                                                   my_size_t padding) {
   my_size_t offset = 0;
   my_memcpy(buffer, string, string_len);
   offset += string_len;
@@ -211,7 +210,7 @@ static my_size_t format_string_with_left_alignment(char *buffer,
 }
 
 static my_size_t format_string(char *buffer, const char *string,
-                                my_size_t string_len, my_size_t padding) {
+                               my_size_t string_len, my_size_t padding) {
   my_size_t offset = 0;
   if (padding) {
     my_memset(buffer, ' ', padding);
@@ -223,8 +222,7 @@ static my_size_t format_string(char *buffer, const char *string,
 }
 
 static void process_string(char *buffer, va_list args,
-                           __attribute__((unused)) fmt_t *fmt,
-                           my_size_t *len) {
+                           __attribute__((unused)) fmt_t *fmt, my_size_t *len) {
   char *string = (char *)va_arg(args, char *);
   string = get_processed_string(string, fmt);
   my_size_t string_len = calculate_string_len(string, fmt);
@@ -364,8 +362,7 @@ static char *make_prefix_for_base(char *buffer, int base, fmt_t *fmt) {
 }
 
 static void process_unsigned_integer(char *buffer, int base, int upper,
-                                     va_list args, fmt_t *fmt,
-                                     my_size_t *len) {
+                                     va_list args, fmt_t *fmt, my_size_t *len) {
   unsigned long int num = 0;
   if (fmt->length == 'h')
     num = (unsigned long int)((unsigned short int)va_arg(args, unsigned int));
@@ -456,8 +453,8 @@ static void float_to_string_with_mode(char *num_string, long double num,
   }
 }
 
-static void format_float(char *buffer, va_list args, fmt_t *fmt,
-                         my_size_t *len, int upper, int mode) {
+static void format_float(char *buffer, va_list args, fmt_t *fmt, my_size_t *len,
+                         int upper, int mode) {
   long double num = 0;
   if (fmt->length == 'L')
     num = va_arg(args, long double);

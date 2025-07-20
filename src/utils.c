@@ -253,8 +253,8 @@ static void __long_double_to_string_auto(char *str, long double num,
     process_auto_if_not_scientific(str, num, exponent, precision, hash_flag);
 }
 
-void long_double_to_string_auto(char *str, long double num,
-                                my_size_t precision, int hash_flag) {
+void long_double_to_string_auto(char *str, long double num, my_size_t precision,
+                                int hash_flag) {
   if (!make_buffer_if_nan_or_inf(str, num))
     __long_double_to_string_auto(str, num, precision, hash_flag);
 }

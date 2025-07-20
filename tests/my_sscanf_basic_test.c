@@ -39,8 +39,8 @@ START_TEST(test_my_sscanf_long_string) {
       "And the vision that was planted in my brain "
       "Still remains Within the sound of silence";
   ck_assert_int_eq(my_sscanf(input,
-                              "And the vision that was planted in my brain "
-                              "Still remains Within the sound of silence"),
+                             "And the vision that was planted in my brain "
+                             "Still remains Within the sound of silence"),
                    sscanf(input,
                           "And the vision that was planted in my brain "
                           "Still remains Within the sound of silence"));

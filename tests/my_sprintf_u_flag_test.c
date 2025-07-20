@@ -126,8 +126,7 @@ END_TEST
 START_TEST(test_my_sprintf_precision_unsigned) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%.5u", 42u),
-                   sprintf(original, "%.5u", 42u));
+  ck_assert_int_eq(my_sprintf(my, "%.5u", 42u), sprintf(original, "%.5u", 42u));
   ck_assert_str_eq(my, original);
 }
 END_TEST
@@ -176,8 +175,7 @@ Suite *my_sprintf_u_suite(void) {
   tcase_add_test(tc, test_my_sprintf_long_max_unsigned);
   tcase_add_test(tc, test_my_sprintf_many_unsigned);
   tcase_add_test(tc, test_my_sprintf_single_unsigned_with_width);
-  tcase_add_test(tc,
-                 test_my_sprintf_single_unsigned_with_width_and_left_align);
+  tcase_add_test(tc, test_my_sprintf_single_unsigned_with_width_and_left_align);
   tcase_add_test(tc, test_my_sprintf_single_unsigned_with_width_and_fill);
   tcase_add_test(tc, test_my_sprintf_unsigned_with_width);
   tcase_add_test(tc, test_my_sprintf_unsigned_with_zero_fill);

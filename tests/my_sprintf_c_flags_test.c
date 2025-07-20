@@ -18,8 +18,8 @@ END_TEST
 START_TEST(test_my_sprintf_many_chars) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%c%c%c%c%c %c%c%c%c%c%c", 'h', 'e', 'l',
-                               'l', 'o', 'w', 'o', 'r', 'l', 'd', '!'),
+  ck_assert_int_eq(my_sprintf(my, "%c%c%c%c%c %c%c%c%c%c%c", 'h', 'e', 'l', 'l',
+                              'o', 'w', 'o', 'r', 'l', 'd', '!'),
                    sprintf(original, "%c%c%c%c%c %c%c%c%c%c%c", 'h', 'e', 'l',
                            'l', 'o', 'w', 'o', 'r', 'l', 'd', '!'));
   ck_assert_str_eq(my, original);
@@ -84,8 +84,7 @@ END_TEST
 START_TEST(test_my_sprintf_char_with_multiple_flags) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%-5c", 'B'),
-                   sprintf(original, "%-5c", 'B'));
+  ck_assert_int_eq(my_sprintf(my, "%-5c", 'B'), sprintf(original, "%-5c", 'B'));
   ck_assert_str_eq(my, original);
 }
 END_TEST

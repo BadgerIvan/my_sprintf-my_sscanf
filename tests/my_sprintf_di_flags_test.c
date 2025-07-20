@@ -187,8 +187,7 @@ END_TEST
 START_TEST(test_my_sprintf_single_int_with_width) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%10d", 123),
-                   sprintf(original, "%10d", 123));
+  ck_assert_int_eq(my_sprintf(my, "%10d", 123), sprintf(original, "%10d", 123));
   ck_assert_str_eq(my, original);
 }
 END_TEST
@@ -301,8 +300,7 @@ END_TEST
 START_TEST(test_my_sprintf_negative_int_with_plus) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%+d", -123),
-                   sprintf(original, "%+d", -123));
+  ck_assert_int_eq(my_sprintf(my, "%+d", -123), sprintf(original, "%+d", -123));
   ck_assert_str_eq(my, original);
 }
 END_TEST
@@ -310,8 +308,7 @@ END_TEST
 START_TEST(test_my_sprintf_negative_int_with_space) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "% d", -123),
-                   sprintf(original, "% d", -123));
+  ck_assert_int_eq(my_sprintf(my, "% d", -123), sprintf(original, "% d", -123));
   ck_assert_str_eq(my, original);
 }
 END_TEST
@@ -370,8 +367,7 @@ END_TEST
 START_TEST(test_my_sprintf_precision_plus_flag) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%+.5d", 42),
-                   sprintf(original, "%+.5d", 42));
+  ck_assert_int_eq(my_sprintf(my, "%+.5d", 42), sprintf(original, "%+.5d", 42));
   ck_assert_str_eq(my, original);
 }
 END_TEST
@@ -379,8 +375,7 @@ END_TEST
 START_TEST(test_my_sprintf_precision_space_flag) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "% .5d", 42),
-                   sprintf(original, "% .5d", 42));
+  ck_assert_int_eq(my_sprintf(my, "% .5d", 42), sprintf(original, "% .5d", 42));
   ck_assert_str_eq(my, original);
 }
 END_TEST

@@ -138,7 +138,7 @@ START_TEST(test_my_sprintf_many_strings_with_null_with_precision) {
   char my[100];
   char *null_str = NULL;
   ck_assert_int_eq(my_sprintf(my, "%.0s. %.1s. %.5s %.6s", null_str, null_str,
-                               null_str, null_str),
+                              null_str, null_str),
                    sprintf(original, "%.0s. %.1s. %.5s %.6s", null_str,
                            null_str, null_str, null_str));
   ck_assert_str_eq(my, original);
@@ -151,7 +151,7 @@ START_TEST(
   char my[100];
   char *null_str = NULL;
   ck_assert_int_eq(my_sprintf(my, "%-.0s. %-.1s. %-.5s %-.6s", null_str,
-                               null_str, null_str, null_str),
+                              null_str, null_str, null_str),
                    sprintf(original, "%-.0s. %-.1s. %-.5s %-.6s", null_str,
                            null_str, null_str, null_str));
   ck_assert_str_eq(my, original);
@@ -196,8 +196,7 @@ Suite *my_sprintf_s_suite(void) {
   tcase_add_test(tc, test_my_sprintf_string_with_zero_precision);
   tcase_add_test(tc, test_my_sprintf_string_with_large_width);
   tcase_add_test(tc, test_my_sprintf_string_with_width_less_than_length);
-  tcase_add_test(tc,
-                 test_my_sprintf_string_with_precision_greater_than_length);
+  tcase_add_test(tc, test_my_sprintf_string_with_precision_greater_than_length);
   tcase_add_test(tc, test_my_sprintf_mixed_format);
   tcase_add_test(tc, test_my_sprintf_null_string_with_precision);
   tcase_add_test(tc, test_my_sprintf_string_with_star_width);

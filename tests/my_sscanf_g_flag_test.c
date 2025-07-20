@@ -137,8 +137,7 @@ END_TEST
 START_TEST(test_my_sscanf_g_star) {
   char *input = "123.456 789.012";
   float a = 0, b = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*g %g", &a),
-                   sscanf(input, "%*g %g", &b));
+  ck_assert_int_eq(my_sscanf(input, "%*g %g", &a), sscanf(input, "%*g %g", &b));
   ck_assert_float_eq(a, b);
 }
 END_TEST

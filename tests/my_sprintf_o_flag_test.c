@@ -10,8 +10,7 @@
 START_TEST(test_my_sprintf_single_oct) {
   char original[100];
   char my[100];
-  ck_assert_int_eq(my_sprintf(my, "%o", 0123u),
-                   sprintf(original, "%o", 0123u));
+  ck_assert_int_eq(my_sprintf(my, "%o", 0123u), sprintf(original, "%o", 0123u));
   ck_assert_str_eq(my, original);
 }
 END_TEST

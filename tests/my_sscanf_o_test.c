@@ -123,8 +123,7 @@ END_TEST
 START_TEST(test_my_sscanf_o_star) {
   char *input = "123 456";
   unsigned int a = 0, b = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*o %o", &a),
-                   sscanf(input, "%*o %o", &b));
+  ck_assert_int_eq(my_sscanf(input, "%*o %o", &a), sscanf(input, "%*o %o", &b));
   ck_assert_uint_eq(a, b);
 }
 END_TEST

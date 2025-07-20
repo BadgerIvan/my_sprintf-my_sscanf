@@ -380,7 +380,7 @@ static int handle_not_format_char(const char **str, const char **format) {
 }
 
 static my_size_t handle_is_active_after_flag(int is_active, int save,
-                                              my_size_t count, char type) {
+                                             my_size_t count, char type) {
   if (is_active && save && type != 'n' && type != '%') return ++count;
   return count;
 }

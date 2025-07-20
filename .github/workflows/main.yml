@@ -42,7 +42,7 @@ jobs:
         run: make gcov_report
 
       - name: Upload coverage report (optional)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: src/report/

@@ -142,8 +142,7 @@ END_TEST
 START_TEST(test_my_sscanf_d_star) {
   char *input = "123 456";
   int a = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*d %d", &a),
-                   sscanf(input, "%*d %d", &a));
+  ck_assert_int_eq(my_sscanf(input, "%*d %d", &a), sscanf(input, "%*d %d", &a));
 }
 END_TEST
 
@@ -166,8 +165,7 @@ END_TEST
 START_TEST(test_my_sscanf_d_star_simple) {
   char *input = "123 456";
   int a = 0, b = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*d %d", &a),
-                   sscanf(input, "%*d %d", &b));
+  ck_assert_int_eq(my_sscanf(input, "%*d %d", &a), sscanf(input, "%*d %d", &b));
   ck_assert_int_eq(a, b);
 }
 END_TEST

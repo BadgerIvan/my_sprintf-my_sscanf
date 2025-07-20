@@ -141,8 +141,7 @@ END_TEST
 START_TEST(test_my_sscanf_f_star) {
   char *input = "123.456 789.012";
   float a = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*f %f", &a),
-                   sscanf(input, "%*f %f", &a));
+  ck_assert_int_eq(my_sscanf(input, "%*f %f", &a), sscanf(input, "%*f %f", &a));
 }
 END_TEST
 

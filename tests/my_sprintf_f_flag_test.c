@@ -189,7 +189,7 @@ START_TEST(test_my_sprintf_hard_inf) {
   char original[100];
   char my[100];
   ck_assert_int_eq(my_sprintf(my, "%f %f %f %f %f %f", 0.0 / 0.0, 1.0 / 0.0,
-                               0.0 / 1.0, -0.0 / 0.0, -1.0 / 0.0, -0.0 / 1.0),
+                              0.0 / 1.0, -0.0 / 0.0, -1.0 / 0.0, -0.0 / 1.0),
                    sprintf(original, "%f %f %f %f %f %f", 0.0 / 0.0, 1.0 / 0.0,
                            0.0 / 1.0, -0.0 / 0.0, -1.0 / 0.0, -0.0 / 1.0));
   ck_assert_str_eq(my, original);

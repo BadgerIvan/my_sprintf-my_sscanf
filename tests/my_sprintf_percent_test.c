@@ -29,7 +29,7 @@ START_TEST(test_my_sprintf_many_procents_with_other_data) {
   char my[100];
   ck_assert_int_eq(
       my_sprintf(my, "%%%%%% %% %% %%%%%%%%%%%%%% %%%s%% %%%s%% %%%c%% %%",
-                  "hello", "world", '!'),
+                 "hello", "world", '!'),
       sprintf(original, "%%%%%% %% %% %%%%%%%%%%%%%% %%%s%% %%%s%% %%%c%% %%",
               "hello", "world", '!'));
   ck_assert_str_eq(my, original);

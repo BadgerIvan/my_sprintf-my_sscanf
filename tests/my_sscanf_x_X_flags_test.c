@@ -147,8 +147,7 @@ END_TEST
 START_TEST(test_my_sscanf_x_star) {
   char *input = "abc 123";
   unsigned int a = 0, b = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*x %x", &a),
-                   sscanf(input, "%*x %x", &b));
+  ck_assert_int_eq(my_sscanf(input, "%*x %x", &a), sscanf(input, "%*x %x", &b));
   ck_assert_uint_eq(a, b);
 }
 END_TEST

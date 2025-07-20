@@ -167,8 +167,7 @@ END_TEST
 START_TEST(test_my_sscanf_G_star) {
   char *input = "1.23E1 4.56E2";
   float a = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*G %G", &a),
-                   sscanf(input, "%*G %G", &a));
+  ck_assert_int_eq(my_sscanf(input, "%*G %G", &a), sscanf(input, "%*G %G", &a));
 }
 END_TEST
 
@@ -183,8 +182,7 @@ END_TEST
 START_TEST(test_my_sscanf_G_star_simple) {
   char *input = "1.23E1 4.56E2";
   float a = 0, b = 0;
-  ck_assert_int_eq(my_sscanf(input, "%*G %G", &a),
-                   sscanf(input, "%*G %G", &b));
+  ck_assert_int_eq(my_sscanf(input, "%*G %G", &a), sscanf(input, "%*G %G", &b));
   ck_assert_float_eq(a, b);
 }
 END_TEST

@@ -30,8 +30,7 @@ START_TEST(test_my_sprintf_pointer_with_width) {
   char original[100];
   char my[100];
   void *ptr = (void *)0x123;
-  ck_assert_int_eq(my_sprintf(my, "%15p", ptr),
-                   sprintf(original, "%15p", ptr));
+  ck_assert_int_eq(my_sprintf(my, "%15p", ptr), sprintf(original, "%15p", ptr));
   ck_assert_str_eq(my, original);
 }
 END_TEST
