@@ -40,7 +40,6 @@ gcov_report: test
 	mkdir -p $(REPORT_DIR)
 	lcov -t "my_string_test" -o $(REPORT_DIR)/my_string_test.info -c -d .
 	genhtml -o $(REPORT_DIR) $(REPORT_DIR)/my_string_test.info
-	open $(REPORT_DIR)/index.html
 
 clean:
 	rm -rf *.o *.gcov.o
