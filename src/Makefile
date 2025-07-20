@@ -17,11 +17,11 @@ TEST_OBJECTS=$(TEST_SOURCES:.c=.o)
 
 .PHONY: all rebuild clean test gcov_report
 
-all: s21_string.a
+all: my_string.a
 
-s21_string.a: $(OBJECTS)
-	ar rcs s21_string.a $(OBJECTS)
-	ranlib s21_string.a
+my_string.a: $(OBJECTS)
+	ar rcs my_string.a $(OBJECTS)
+	ranlib my_string.a
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -38,13 +38,13 @@ test: $(TEST_OBJECTS) $(GCOV_OBJECTS)
 
 gcov_report: test
 	mkdir -p $(REPORT_DIR)
-	lcov -t "s21_string_test" -o $(REPORT_DIR)/s21_string_test.info -c -d .
-	genhtml -o $(REPORT_DIR) $(REPORT_DIR)/s21_string_test.info
+	lcov -t "my_string_test" -o $(REPORT_DIR)/my_string_test.info -c -d .
+	genhtml -o $(REPORT_DIR) $(REPORT_DIR)/my_string_test.info
 	open $(REPORT_DIR)/index.html
 
 clean:
 	rm -rf *.o *.gcov.o
-	rm -rf s21_string.a
+	rm -rf my_string.a
 	rm -rf test
 	rm -rf *.gcda *.gcno
 	rm -rf $(REPORT_DIR)

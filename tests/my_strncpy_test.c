@@ -1,0 +1,61 @@
+#include <check.h>
+#include <limits.h>
+#include <locale.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../src/my_string.h"
+
+START_TEST(test_my_strncpy_normal) {
+  char dest1[20];
+  char dest2[20];
+  const char *src = "Hello, world!";
+  size_t n = strlen(src) + 1;
+
+  ck_assert_str_eq(my_strncpy(dest1, src, n), strncpy(dest2, src, n));
+}
+END_TEST
+
+START_TEST(test_my_strncpy_partial) {
+  char dest1[20];
+  char dest2[20];
+  const char *src = "Hello, world!";
+  size_t n = 5;
+
+  ck_assert_str_eq(my_strncpy(dest1, src, n), strncpy(dest2, src, n));
+}
+END_TEST
+
+START_TEST(test_my_strncpy_empty_src) {
+  char dest1[20] = "belyash";
+  char dest2[20] = "belyash";
+  const char *src = "";
+  size_t n = 20;
+
+  ck_assert_str_eq(my_strncpy(dest1, src, n), strncpy(dest2, src, n));
+}
+END_TEST
+
+START_TEST(test_my_strncpy_null_symvols_from_src) {
+  char dest1[20] = "belyash";
+  char dest2[20] = "belyash";
+  const char *src = "vkusni";
+  size_t n = 0;
+
+  ck_assert_str_eq(my_strncpy(dest1, src, n), strncpy(dest2, src, n));
+}
+END_TEST
+
+Suite *my_strncpy_suite(void) {
+  Suite *s = suite_create("my_strncpy");
+  TCase *tc = tcase_create("Core");
+
+  tcase_add_test(tc, test_my_strncpy_normal);
+  tcase_add_test(tc, test_my_strncpy_partial);
+  tcase_add_test(tc, test_my_strncpy_empty_src);
+  tcase_add_test(tc, test_my_strncpy_null_symvols_from_src);
+
+  suite_add_tcase(s, tc);
+  return s;
+}
