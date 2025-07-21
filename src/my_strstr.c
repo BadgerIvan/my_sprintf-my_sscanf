@@ -1,10 +1,10 @@
 #include "my_string.h"
 
 char *my_strstr(const char *haystack, const char *needle) {
-  char *res = my_NULL;
-  if (needle == my_NULL) {
+  char *res = MY_NULL;
+  if (needle == MY_NULL) {
     res = (char *)haystack;
-  } else if (haystack != my_NULL) {
+  } else if (haystack != MY_NULL) {
     my_size_t i = 0;
     my_size_t count_matches = 0;
     my_size_t len_str1 = my_strlen(haystack);

@@ -1,7 +1,7 @@
 #ifndef my_STRING_H_
 #define my_STRING_H_
 
-#define my_NULL ((void *)0)
+#define MY_NULL ((void *)0)
 
 typedef long unsigned my_size_t;
 

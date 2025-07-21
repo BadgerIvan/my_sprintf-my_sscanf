@@ -38,7 +38,7 @@ typedef void (*process_func_t)(char *, va_list, fmt_t *, my_size_t *);
 
 static void init_process_array(process_func_t *array_of_funcs) {
   for (int i = 0; i < NUMBER_ASCII; i++)
-    array_of_funcs[i] = (process_func_t)my_NULL;
+    array_of_funcs[i] = (process_func_t)MY_NULL;
 }
 
 static void register_process_func(process_func_t *array_of_funcs, char flag,
@@ -176,7 +176,7 @@ static void process_char(char *buffer, va_list args, fmt_t *fmt,
 }
 
 static char *get_processed_string(char *str, fmt_t *fmt) {
-  if (str != my_NULL) return str;
+  if (str != MY_NULL) return str;
   str = "(null)";
   if (fmt->precision_set && fmt->precision <= my_strlen("(null)") - 1) str = "";
   return str;
@@ -406,7 +406,7 @@ static void process_pointer(char *buffer, va_list args, fmt_t *fmt,
   change_flags_to_correct_for_pointer(fmt);
   char num_string[100];
   char *num_string_with_prefix = num_string;
-  if (ptr != (uintptr_t)my_NULL)
+  if (ptr != (uintptr_t)MY_NULL)
     num_string_with_prefix = make_prefix_for_base(num_string, 16, fmt);
   pointer_to_string(num_string_with_prefix, ptr);
   format_integer(buffer, num_string, ptr, 0, fmt, len);

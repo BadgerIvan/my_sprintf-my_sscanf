@@ -8,7 +8,7 @@
 #include "my_string.h"
 
 char *parse_my_size_t_from_str(const char *str, my_size_t *result) {
-  if (str == my_NULL || result == my_NULL) return my_NULL;
+  if (str == MY_NULL || result == MY_NULL) return MY_NULL;
   *result = 0;
   char *buffer = (char *)str;
   while (isdigit((int)*buffer)) {
@@ -57,7 +57,7 @@ void to_upper_string(char *str) {
 }
 
 void pointer_to_string(char *str, uintptr_t ptr) {
-  if (ptr == (uintptr_t)my_NULL)
+  if (ptr == (uintptr_t)MY_NULL)
     my_strncpy(str, "(nil)", 6);
   else
     my_size_t_to_string_with_base(str, ptr, 16);

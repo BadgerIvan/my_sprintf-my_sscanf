@@ -31,7 +31,7 @@ typedef int (*process_func_t)(const char **, info_t *, va_list, const char *);
 
 static void init_process_array(process_func_t *array_of_funcs) {
   for (int i = 0; i < NUMBER_ASCII; i++)
-    array_of_funcs[i] = (process_func_t)my_NULL;
+    array_of_funcs[i] = (process_func_t)MY_NULL;
 }
 
 static void register_process_func(process_func_t *funcs, char flag,
@@ -324,7 +324,7 @@ static int process_type(const char **str, va_list args, info_t *info_flag,
 }
 
 static int check_type(char type) {
-  return my_strchr("cdieEfFgGosuxXpn%", type) != my_NULL;
+  return my_strchr("cdieEfFgGosuxXpn%", type) != MY_NULL;
 }
 
 static const char *parse_save_flag(const char *format, info_t *info_flag) {
@@ -405,8 +405,8 @@ static void register_all_process_funcs(process_func_t *funcs) {
 }
 
 int my_sscanf(const char *str, const char *format, ...) {
-  if (str == my_NULL || format == my_NULL) return EOF;
-  if (*str == '\0' && my_strstr(format, "%n") == my_NULL) return EOF;
+  if (str == MY_NULL || format == MY_NULL) return EOF;
+  if (*str == '\0' && my_strstr(format, "%n") == MY_NULL) return EOF;
   va_list args;
   va_start(args, format);
   process_func_t funcs[NUMBER_ASCII];
