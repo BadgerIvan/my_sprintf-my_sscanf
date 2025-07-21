@@ -21,8 +21,8 @@ START_TEST(test_parse_my_size_t_from_str_null_checks) {
   my_size_t result = 0;
   const char *test_str = "123";
 
-  ck_assert_ptr_eq(parse_my_size_t_from_str(my_NULL, &result), my_NULL);
-  ck_assert_ptr_eq(parse_my_size_t_from_str(test_str, my_NULL), my_NULL);
+  ck_assert_ptr_eq(parse_my_size_t_from_str(MY_NULL, &result), MY_NULL);
+  ck_assert_ptr_eq(parse_my_size_t_from_str(test_str, MY_NULL), MY_NULL);
 }
 END_TEST
 

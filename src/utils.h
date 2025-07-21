@@ -8,7 +8,8 @@
 void reverse_str(char *str, int len);
 void to_upper_string(char *str);
 
-char *parse_my_size_t_from_str_with_width(const char *str, my_size_t *result, my_size_t width);
+char *parse_my_size_t_from_str_with_width(const char *str, my_size_t *result,
+                                          my_size_t width);
 char *parse_my_size_t_from_str(const char *str, my_size_t *result);
 
 void my_size_t_to_string_with_base(char *str, my_size_t num, int base);

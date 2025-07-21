@@ -62,7 +62,7 @@ END_TEST
 START_TEST(test_my_sprintf_many_strings_with_null) {
   char original[100];
   char my[100];
-  char *null_str = my_NULL;
+  char *null_str = MY_NULL;
   ck_assert_int_eq(my_sprintf(my, "%-1.1s. %-14.17s.", null_str, null_str),
                    sprintf(original, "%-1.1s. %-14.17s.", null_str, null_str));
   ck_assert_str_eq(my, original);

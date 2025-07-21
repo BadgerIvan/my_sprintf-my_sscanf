@@ -20,7 +20,7 @@ END_TEST
 START_TEST(test_my_sprintf_null_pointer) {
   char original[100];
   char my[100];
-  void *ptr = my_NULL;
+  void *ptr = MY_NULL;
   ck_assert_int_eq(my_sprintf(my, "%p", ptr), sprintf(original, "%p", ptr));
   ck_assert_str_eq(my, original);
 }
@@ -80,8 +80,8 @@ START_TEST(test_my_sprintf_hard_for_mac) {
   char original[100];
   char my[100];
   char *ptr = "NULL";
-  ck_assert_int_eq(my_sprintf(my, "test -  %p - %p", my_NULL, ptr),
-                   sprintf(original, "test -  %p - %p", my_NULL, ptr));
+  ck_assert_int_eq(my_sprintf(my, "test -  %p - %p", MY_NULL, ptr),
+                   sprintf(original, "test -  %p - %p", MY_NULL, ptr));
   ck_assert_pstr_eq(my, original);
 }
 END_TEST
